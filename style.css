@@ -36,3 +36,40 @@ header button:hover {
     margin-right: 20px;
     border: black solid 1px;
 }
+
+/*calendar*/
+
+#calendar {
+    font-size: 14px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    border-spacing: 0;
+}
+
+th,
+td {
+    border: 1px solid #eee;
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #3498db;
+    color: #fff;
+    font-weight: normal;
+}
+
+td {
+    cursor: pointer;
+}
+
+.current-day {
+    background-color: #f39c12;
+    color: #fff;
+    border-radius: 50%;
+}
