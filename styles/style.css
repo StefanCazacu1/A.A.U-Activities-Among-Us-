@@ -18,3 +18,7 @@
 .input__error:empty {
 	display: none;
 }
+
+img[src=''] {
+	display: none;
+}
