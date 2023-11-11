@@ -23,7 +23,6 @@ $events = getEvents();
 				<button class="login">Login</button>
 			</div>
 		</header>
-<<<<<<< HEAD
 		<div><h1>This is where the events will be showed</h1></div>
 		<?php
     while ($row = $events->fetch_assoc()) {
@@ -36,10 +35,7 @@ $events = getEvents();
         echo "</div>";
     }
     ?>
-=======
 		</div>
-
->>>>>>> c21cc2c371603d71ae5db9249eaecaaf4b115027
 		<div id="calendar">
 			<table>
 				<thead>
