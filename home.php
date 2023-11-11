@@ -19,8 +19,8 @@ $events = getEvents();
 				<button class="button2">City</button>
 			</div>
 			<div class="signUpLogIn">
-				<button class="signUp">Sign Up</button>
-				<button class="login">Login</button>
+				<a href="signup.php">Sing in</a>
+				<a href="login.php">Login</a>
 			</div>
 		</header>
 		<div><h1>This is where the events will be showed</h1></div>
