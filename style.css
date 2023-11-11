@@ -1,8 +1,13 @@
 body {
     margin: 0;
     padding: 0;
+    display: grid;
+    grid-template-columns: repeat(1fr  , 5);
+    background-color: #FFE8D6;
 }
-
+.headerContainer{
+    grid-column: 1 / 6;
+}
 header {
     display: flex;
     justify-content: space-between;
@@ -40,6 +45,9 @@ header button:hover {
 /*calendar*/
 
 #calendar {
+    grid-column: 1 / 3;
+    margin-block: 5rem;
+    margin-inline: 5rem;
     font-size: 14px;
     border-radius: 8px;
     overflow: hidden;
@@ -47,19 +55,20 @@ header button:hover {
 
 table {
     border-collapse: collapse;
-    width: 100%;
+    width: 50%;
     border-spacing: 0;
+    background-color: white;
 }
 
 th,
 td {
     border: 1px solid #eee;
-    padding: 10px;
+    padding: 5px;
     text-align: center;
 }
 
 th {
-    background-color: #3498db;
+    background-color: #CB997E;
     color: #fff;
     font-weight: normal;
 }
