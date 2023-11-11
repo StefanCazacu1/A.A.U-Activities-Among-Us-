@@ -7,6 +7,7 @@
 		<link rel="stylesheet" href="style.css" />
 	</head>
 	<body>
+		<div class="headerContainer">
 		<header>
 			<div class="searchAndCity">
 				<button class="button1">Search events</button>
@@ -17,6 +18,7 @@
 				<button class="login">Login</button>
 			</div>
 		</header>
+		</div>
 
 		<div id="calendar">
 			<table>
