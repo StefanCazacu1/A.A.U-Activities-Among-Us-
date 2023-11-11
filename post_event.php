@@ -67,15 +67,17 @@
 		if (!$errorFlag) {
 			if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
 				echo "The file " . htmlspecialchars(basename($_FILES["image"]["name"])) . " has been uploaded.";
+				$title = $desc = $time = $location = '';
 			} else {
 				$image_errors[] = "Sorry, there was an error uploading your file.";
 			}
 		}
 	}
 	?>
-	<form action="<?php echo $_SERVER["PHP_SELF"] ?>" method="POST" enctype="multipart/form-data">
+	<form action="<?php echo $_SERVER["PHP_SELF"] ?>" method="POST" enctype="multipart/form-data" id="postForm">
 		<p class="input__wrapper">
 			<label class="input__label" for="image">Thumbnail</label>
+			<img src="" alt="thumbnail" id="thumbnail">
 			<input class="input" type="file" accept="image/*" id="image" name="image">
 			<span class="input__error">
 				<?php
@@ -87,31 +89,28 @@
 		</p>
 		<p class="input__wrapper">
 			<label class="input__label" for="title">Title</label>
-			<input class="input" type="text" id="title" name="title">
+			<input class="input" type="text" id="title" name="title" value="<?php echo $title ?>">
 			<span class="input__error"><?php echo $title_error ?></span>
 		</p>
 		<p class="input__wrapper">
 			<label class="input__label" for="desc">Description(optional)</label>
-			<input class="input" type="text" id="desc" name="desc">
+			<input class="input" type="text" id="desc" name="desc" value="<?php echo $desc ?>">
 			<span class="input__error"><?php echo $desc_error ?></span>
 		</p>
 		<p class="input__wrapper">
 			<label class="input__label" for="time">Time</label>
-			<input class="input" type="time" id="time" name="time">
+			<input class="input" type="time" id="time" name="time" value="<?php echo $time  ?>">
 			<span class="input__error"><?php echo $time_error ?></span>
 		</p>
 		<p class="input__wrapper">
 			<label class="input__label" for="location">Location</label>
-			<input class="input" type="text" id="location" name="location">
+			<input class="input" type="text" id="location" name="location" value="<?php echo $location ?>">
 			<span class="input__error"><?php echo $location_error ?></span>
 		</p>
 		<button type="submit" name="submit">Post</button>
 	</form>
 
-
-	<script deref src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places&callback=initMap">
-	</script>
-	<script deref scr="./scripts/index.js"></script>
+	<script src="./scripts/index.js"></script>
 </body>
 
 </html>
