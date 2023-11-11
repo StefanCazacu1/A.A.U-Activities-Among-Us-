@@ -3,18 +3,19 @@ console.log('HELLo, World!')
 const postForm = document.getElementById('postForm')
 const thumbnail = document.getElementById('thumbnail')
 
-postForm.addEventListener('change', e => {
-	if (e.target.id === 'image') {
-		thumbnail.src = e.target.value
-		const reader = new FileReader()
+if (postForm)
+	postForm.addEventListener('change', e => {
+		if (e.target.id === 'image') {
+			thumbnail.src = e.target.value
+			const reader = new FileReader()
 
-		reader.onload = () => {
-			thumbnail.src = reader.result
+			reader.onload = () => {
+				thumbnail.src = reader.result
+			}
+			reader.readAsDataURL(e.target.files[0])
 		}
-		reader.readAsDataURL(e.target.files[0])
-	}
-	console.log(e.target)
-})
+		console.log(e.target)
+	})
 
 // Get current date information
 const today = new Date()
