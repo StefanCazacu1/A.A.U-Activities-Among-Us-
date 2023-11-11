@@ -13,18 +13,31 @@ header {
 
 header button {
     background-color: #FFE8D6;
-    padding: 5px;
-    border: none;
     width: 150px;
     height: 35px;
+    border: black solid 1px;
+}
+
+.searchAndCity {
+    display: flex;
 }
 
 .button1 {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
     border-radius: 20px 0 0 20px;
 }
 
 .button2 {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
     border-radius: 0 20px 20px 0;
+}
+
+.button1 img, .button2 img {
+    width: 15px;
 }
 
 header button:hover {
@@ -34,7 +47,7 @@ header button:hover {
 .signUp, .login {
     border-radius: 10px;
     margin-right: 20px;
-    border: black solid 1px;
+    
 }
 
 /*calendar*/
