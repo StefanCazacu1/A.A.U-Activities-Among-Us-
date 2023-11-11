@@ -14,6 +14,18 @@ function connectToDatabase() {
 
     return $conn;
 }
+function closeDatabaseConnection($conn) {
+    $conn->close();
+}
+function getEvents() {
+    $conn = connectToDatabase();
 
+    $sql = "SELECT * FROM posts ORDER BY time DESC"; // Fetch events in descending order of time
+    $result = $conn->query($sql);
+
+    closeDatabaseConnection($conn);
+
+    return $result;
+}
 
 ?>

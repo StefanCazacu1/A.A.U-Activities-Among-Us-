@@ -1,3 +1,8 @@
+<?php
+include('db.php');
+
+$events = getEvents();
+?>
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -17,7 +22,18 @@
 				<button class="login">Login</button>
 			</div>
 		</header>
-
+		<div><h1>This is where the events will be showed</h1></div>
+		<?php
+    while ($row = $events->fetch_assoc()) {
+        echo "<div>";
+        echo "<h3>" . $row['title'] . "</h3>";
+        echo "<p>" . $row['description'] . "</p>";
+        echo "<p>Time: " . $row['time'] . "</p>";
+        echo "<p>Location: " . $row['location'] . "</p>";
+        echo "<img src='uploads/" . $row['thumbnail'] . "' alt='thumbnail'>";
+        echo "</div>";
+    }
+    ?>
 		<div id="calendar">
 			<table>
 				<thead>
@@ -36,5 +52,11 @@
 		</div>
 
 		<script src="./scripts/index.js"></script>
+		<script>
+    // Automatically refresh the page every 30 seconds
+    setInterval(function () {
+        location.reload();
+    }, 30000); // 30,000 milliseconds = 30 seconds
+</script>
 	</body>
 </html>
